@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 *{
     margin: 0;
     padding: 0;
@@ -14,14 +16,48 @@
     --cor6: #00dfdf;
     --cor7: #0f0f0f;
 }
+
+.ac, .igual, .especial{
+    background-color: var(--cor5);
+}
+
+.ac:hover, .igual:hover, .especial:hover{
+    background-color: var(--cor6);
+}
+
 body{
     background-color: var(--cor0);
     transition: background 0.5s linear, color 0.5s linear;
 }
+
 body.dark{
     background-color: var(--cor1);
     color: var(--cor0);
 }
+
+body.dark label{
+    background-color: var(--cor0);
+    color: var(--cor7);
+}
+
+.btn{
+    margin: 3px;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor3);
+    color: var(--cor2);
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 50ms ease-in-out;
+}
+
+.btn:hover{
+    background-color: var(--cor4);
+}
+
 .calculator{
     width: 250px;
     position: absolute;
@@ -31,6 +67,40 @@ body.dark{
     border-radius: 15px;
     padding: 10px;
 }
+
+input{
+    visibility: hidden;
+}
+
+@keyframes pisca{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+label{
+    background-color: var(--cor1);
+    color: var(--cor0);
+    border-radius: 50%;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 1s linear;
+}
+
+label span{
+    position: relative;
+    top:24%;
+    left: 23%;
+    transform: translateX(-50%);
+    transition:  .5s radial;
+}
+
 p{
     background-color: var(--cor3);
     border-radius: 10px;
@@ -49,39 +119,6 @@ p::after{
     animation: pisca 1.0s infinite;
 }
 
-@keyframes pisca{
-    0%, 100%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
-}
-table td{
-    display: inline-block;
-}
-.btn{
-    margin: 3px;
-    width: 50px;
-    height: 40px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--cor3);
-    color: var(--cor2);
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 50ms ease-in-out;
-}
-.btn:hover{
-    background-color: var(--cor4);
-}
-.ac, .igual, .especial{
-    background-color: var(--cor5);
-}
-.ac:hover, .igual:hover, .especial:hover{
-    background-color: var(--cor6);
-}
 .res{
     height: 100px;
     color: var(--cor7);
@@ -90,37 +127,15 @@ table td{
     word-wrap: break-word;
     border-bottom: 1px solid var(--cor3);
 }
+
+table td{
+    display: inline-block;
+}
+
 .theme{
     position: absolute;
     top: 100%;
     left: 100%;
     transform: translate(-100%,-100%);
     padding: 50px;
-}
-label{
-    background-color: var(--cor1);
-    color: var(--cor0);
-    border-radius: 50%;
-    display: inline-block;
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
-    user-select: none;
-    transition: background 1s linear;
-}
-
-body.dark label{
-    background-color: var(--cor0);
-    color: var(--cor7);
-}
-label span{
-    position: relative;
-    top:24%;
-    left: 23%;
-    transform: translateX(-50%);
-    transition:  .5s radial;
-}
-
-input{
-    visibility: hidden;
 }

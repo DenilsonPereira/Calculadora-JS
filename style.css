@@ -17,14 +17,6 @@
     --cor7: #0f0f0f;
 }
 
-.ac, .igual, .especial{
-    background-color: var(--cor5);
-}
-
-.ac:hover, .igual:hover, .especial:hover{
-    background-color: var(--cor6);
-}
-
 body{
     background-color: var(--cor0);
     transition: background 0.5s linear, color 0.5s linear;
@@ -66,6 +58,14 @@ body.dark label{
     transform: translate(-50%,-50%);
     border-radius: 15px;
     padding: 10px;
+}
+
+.ac, .igual, .especial{
+    background-color: var(--cor5);
+}
+
+.ac:hover, .igual:hover, .especial:hover{
+    background-color: var(--cor6);
 }
 
 input{

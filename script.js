@@ -22,7 +22,7 @@ function backspace(){
 }
 function confirma(){
     if(resultado.textContent != 'Erro'){
-        document.getElementById('resultado').innerHTML = eval(resultado.innerHTML).toFixed(4);
+        document.getElementById('resultado').innerHTML = eval(resultado.innerHTML).toFixed(2).replace(".", ",");
 
     }
 }
